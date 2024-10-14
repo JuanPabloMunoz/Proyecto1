@@ -1,0 +1,1 @@
+Este es un nuevo archivo que crea Lorena, porque ella no habia creado archivo antes, sólo habia editado.
