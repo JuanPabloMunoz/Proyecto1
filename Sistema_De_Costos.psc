@@ -1,3 +1,4 @@
+//Sitema de Costos v1.1
 Funcion procesado<- ValidaNumero(text1)// esta función no permite que ingresen caractaeres con expeción del punto y el signo menos.
 	Definir numTex Como Caracter;
 	Definir largoTex Como Entero;
@@ -8,6 +9,7 @@ Funcion procesado<- ValidaNumero(text1)// esta función no permite que ingresen c
 	Definir filtrado Como Caracter;
 	Definir logic1 Como Logico;
 	Definir procesado Como Real;
+	
 	
 	filtrado<-"";
 	procesado<-0;
@@ -27,6 +29,7 @@ Funcion procesado<- ValidaNumero(text1)// esta función no permite que ingresen c
 				logic1<- Verdadero;
 				Limpiar Pantalla;
 				Escribir "Has ingresado una letra o caracter!!!";
+				
 			SiNo
 				filtrado<- filtrado + Subcadena(numTex,j,j);
 				logic1<- Falso;
@@ -36,7 +39,7 @@ Funcion procesado<- ValidaNumero(text1)// esta función no permite que ingresen c
 			
 		FinPara
 		
-	Hasta Que logic1 = Falso
+	Hasta Que logic1 = Falso 
 	
 	procesado<- ConvertirANumero(filtrado);
 FinFuncion
@@ -99,8 +102,8 @@ FinFuncion
 
 Algoritmo Sistema_De_Costos
 	
-	//Falto validar que no ingresaran más de dos puntos, ni más de dos signos menos.
-	//espero poder implementar dicha mejora prontamente.
+//Falto validar que no ingresaran más de dos puntos, ni más de dos signos menos.
+//espero poder implementar dicha mejora prontamente.
 	
 	
 	//registra el nombre del producto.
@@ -134,52 +137,58 @@ Algoritmo Sistema_De_Costos
 	
 	
 	Repetir
-		
-		
-		Limpiar Pantalla;
-		Escribir "Usted seleciono un número fuera del rango!!!";
-		Escribir "Seleccione un número (1,2,3 o 4): ";
-		Escribir "";
-		
-		Para f<- 0 Hasta 1 Hacer
-			Para c<- 0 Hasta 1 Hacer
-				Escribir arreglo[f,c];
+	  
+		si producto < 1 o producto > 4 Entonces
+			Limpiar Pantalla;
+			Escribir "Usted seleciono un número fuera del rango!!!";
+			Escribir "Seleccione un número (1,2,3 o 4): ";
+			Escribir "";
+			
+			Para f<- 0 Hasta 1 Hacer
+				Para c<- 0 Hasta 1 Hacer
+					Escribir arreglo[f,c];
+				FinPara
 			FinPara
-		FinPara
+			
+			producto<-ValidaProducto(text1);
 		
-		producto<-ValidaProducto(text1);
+		FinSi
 		
 		
 		
 		
 		
 		Segun  producto Hacer
-			1:  Escribir "Usted eligio Zapato Escolar.";
-				nomPro<- arreglo[0,0];
-				Escribir "";
-				Escribir "Presione una tecla para continuar...";
-				Esperar Tecla;
-				
-			2:  Escribir "Usted eligio Zapato Deportivos.";
-				nomPro<- arreglo[0,1];
-				Escribir "";
-				Escribir "Presione una tecla para continuar...";
-				Esperar Tecla;
-			3:  
-				Escribir "Usted eligio Botas Mujer.";
-				nomPro<- arreglo[1,0];
-				Escribir "";
-				Escribir "Presione una tecla para continuar...";
-				Esperar Tecla;
-				
-			4:  Escribir "Usted eligio Pantuflas Mujer.";
-				nomPro<- arreglo[1,1];
-				Escribir "";
-				Escribir "Presione una tecla para continuar...";
-				Esperar Tecla;
-				
-			De Otro Modo:
-				Escribir "El producto seleccionado no existe";
+		1:  Limpiar Pantalla;
+			Escribir "Usted eligio Zapato Escolar.";
+			nomPro<- arreglo[0,0];
+			Escribir "";
+			Escribir "Presione una tecla para continuar...";
+			Esperar Tecla;
+			
+		2:  Limpiar Pantalla;
+			Escribir "Usted eligio Zapato Deportivos.";
+			nomPro<- arreglo[0,1];
+			Escribir "";
+			Escribir "Presione una tecla para continuar...";
+			Esperar Tecla;
+		3:  
+			Limpiar Pantalla;
+			Escribir "Usted eligio Botas Mujer.";
+			nomPro<- arreglo[1,0];
+			Escribir "";
+			Escribir "Presione una tecla para continuar...";
+			Esperar Tecla;
+			
+		4:  Limpiar Pantalla;
+			Escribir "Usted eligio Pantuflas Mujer.";
+			nomPro<- arreglo[1,1];
+			Escribir "";
+			Escribir "Presione una tecla para continuar...";
+			Esperar Tecla;
+			
+		De Otro Modo:
+			Escribir "El producto seleccionado no existe";
 				
 		FinSegun
 		
@@ -208,8 +217,8 @@ Algoritmo Sistema_De_Costos
 	    Mientras Que valPro <=0 // valido que el precio sea mayor que 0, de lo contrario el producto no tendria valor asociado.
     FinSi
 	
-	
-	
+
+
 	//Evalúa si existe cupón de descuento, para realizar descuento.
 	Definir opDescuento Como Entero;
 	Definir  auxCupon Como Real;
@@ -245,8 +254,8 @@ Algoritmo Sistema_De_Costos
 		Mientras Que opDescuento <1 o opDescuento >2 
 	FinSi
 	
-	
-	
+
+
 	si opDescuento=1 Entonces
 		Definir CUPON como Real;
 		Definir desCupon Como Real;
@@ -276,7 +285,7 @@ Algoritmo Sistema_De_Costos
 	Limpiar Pantalla;
 	Text1<- "Ingrese la cantidad de productos: ";
 	cantPro<- ValidaNumero(text1);// llamo a la función ValidaNumero y le paso text1. ;
-	
+		
 	
 	Repetir
 		SI cantPro <= 0 Entonces
@@ -290,7 +299,7 @@ Algoritmo Sistema_De_Costos
 			cantPro<- ValidaNumero(text1);// llamo a la función ValidaNumero y le paso text1. ;
 		FinSi
 	Mientras Que cantPro <= 0 //Valida que el numero ingresado sea mayor que cero.
-	
+
 	
 	// Si la cantidad de productos es igual o mayor a dos, se efectua descuento.
 	si cantPro >= 2 Entonces
@@ -329,7 +338,7 @@ Algoritmo Sistema_De_Costos
 			Escribir "Ingrese peso(kg) del producto: ";
 			Leer pesoProd;
 		FinSi
-		
+	
 	Hasta Que pesoProd > 0 //Valida que valor ingresado sea mayor que cero.
 	
 	si pesoProd >= 3 Entonces
@@ -345,7 +354,7 @@ Algoritmo Sistema_De_Costos
 		FinSi
 	FinSi
 	
-	
+
 	
 	
 	
