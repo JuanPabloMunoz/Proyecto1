@@ -1,1 +1,0 @@
-Creación de README por Rebeca Vargas para reto4.
