@@ -3,6 +3,10 @@ al dia de hoy, solo me falta validar que el usuario no pueda ingresar más de do
 
 ![Codigo](https://github.com/user-attachments/assets/fa665b8b-1389-4ae3-9a26-401419944d75)
 
+![Pantalla1](https://github.com/user-attachments/assets/8dceb147-0787-4e44-8a4d-33200ff8412b)
+
+![Pantalla2](https://github.com/user-attachments/assets/334449f9-82dd-4265-9162-7c36fbb4e812)
+
 ![pantalla3](https://github.com/user-attachments/assets/9d68a859-c83a-49b8-b871-532ada10d948)
 
 
